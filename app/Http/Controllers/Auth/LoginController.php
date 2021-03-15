@@ -56,7 +56,7 @@ class LoginController extends Controller
             }
         }else{
             //Invalid credential
-            return redirect()->route('login')->with('error', 'Invalid Credentials');
+            return redirect()->back()->with('error', 'Invalid Credentials');
         }
         
     }
