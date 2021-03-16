@@ -9,7 +9,11 @@
               </div>
               <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
-          
+                @if(session('error'))
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>{{session('error')}}</strong>
+                  </div>
+                @endif
                 <form action="{{route('login')}}" method="post">
                   @csrf
                   <div class="input-group mb-3">
@@ -56,7 +60,7 @@
                 </form>
 
                 <p class="mb-1">
-                  <a href="#">I forgot my password</a>
+                  <a href="{{ route('password.request') }}">I forgot my password</a>
                 </p>
               </div>
               <!-- /.card-body -->
